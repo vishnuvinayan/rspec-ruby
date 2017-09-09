@@ -1,18 +1,14 @@
-#Sum without highest and lowest number
-#Sum all the numbers of the array except the highest and the lowest element (the value, not the index!). (The highest / lowest element is respectively only one element at each edge, even if there is more than one with the same value!)
-#Eg: {6, 2, 1, 8, 10} => 16
-#    {1, 1, 11, 2, 3}=> 6
-
 class Sum
+	attr_reader :numbers
 
 	def initialize(numbers)
 		@numbers = numbers
 	end
 
-	def summing
+	def addition
+		return "Should be an array only" if is_array?
+		return "Cannot Process Empty Array" if is_empty?
 
-		#numbers = [6, 2, 1, 8, 10]
-		#puts numbers.sort
 		sum = 0
 		@numbers.sort.each do |number|
 			sum = sum + number
@@ -20,7 +16,15 @@ class Sum
 
 		sum = sum - @numbers.sort.first - @numbers.sort.last
 		return sum
-		#puts sum - @numbers.sort.first - @numbers.sort.last
+	end
 
+	private
+
+	def is_array?
+		@numbers.class.to_s == 'Array'
+	end
+
+	def is_empty?
+		@numbers.size.zero?
 	end
 end

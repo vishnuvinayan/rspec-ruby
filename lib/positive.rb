@@ -1,5 +1,3 @@
-#checks whether the number is positive
-
 class Positive
 
 	attr_accessor :number

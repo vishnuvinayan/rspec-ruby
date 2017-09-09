@@ -1,11 +1,11 @@
 class Reverse
 
-	def initialize(input, result)
+	def initialize(input)
 		@input = input
-		@result = result
 	end
 
 	def reversing
+
 		rev_number = 0
 		remainder = 0
 
@@ -15,8 +15,7 @@ class Reverse
 			@input = @input / 10
 		end
 
-		@result = @input
-		puts @result
+		return rev_number
 
 	end
 
